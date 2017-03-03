@@ -1,0 +1,120 @@
+<style>
+body{margin:40px;}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+</style>
+
+<div class="container" style="margin-top: 8%;">
+  <div>
+  <button type="button" class="btn btn-primary" style="margin-left: 30%;width: 33%;"><h2><b>Confirm Booking<b></h2></button></div>
+
+<form class="form" name="myForm5" style="margin-top: 5%;" ng-submit="ConfirmBook()">
+<div class="table-responsive" class="table-responsive" style="margin-top:3%">
+  <table class="table">
+    <tr>
+      <td><b>User Name</b></td>
+      <td>
+      <input type="text" ng-model="confirm.conUser" class="form-control" min.length="5" required></input>
+
+    </td>
+    </tr>
+    <tr>
+      <td><b>Mail ID</b></td>
+      <td>
+      <input type="email" ng-model="confirm.conMail" class="form-control" required></input>
+    </td>
+    </tr>
+    <tr>
+      <td><b>Movie Booking id</b></td>
+      <td>
+      <p>{{confirmInfo.bookingid}}</p>
+  </td>
+  </tr>
+  <tr>
+    <td><b>Movie title</b></td>
+    <td>
+    <p>{{confirmInfo.FilmName}}</p>
+</td>
+</tr>
+<tr>
+  <td><b>City</b></td>
+  <td>
+  <p>{{confirmInfo.CityName}}</p>
+</td>
+</tr>
+
+<tr>
+  <td><b>Theater</b></td>
+  <td>
+  <p>{{confirmInfo.HallName}}</p>
+</td>
+</tr>
+
+<tr>
+  <td><b>Date</b></td>
+  <td>
+  <p>{{confirmInfo.Day}}</p>
+</td>
+</tr>
+
+<tr>
+  <td><b>Show Time</b></td>
+  <td>
+  <p>{{confirmInfo.ShowTime}}</p>
+</td>
+</tr>
+<tr>
+  <td><b>Amount</b></td>
+  <td>
+  <p>{{confirmInfo.totalAmount}}</p>
+</td>
+</tr>
+<tr>
+  <td><b>no of seats</b></td>
+  <td>
+  <p>{{confirmInfo.nofseats}}</p>
+</td>
+
+<tr>
+  <td><b>Seat Number</b></td>
+  <td>
+  <p>{{confirmInfo.seatNo}}</p>
+</td>
+</tr>
+<tr>
+  <td><b>Account Number</b></td>
+  <td>
+  <input type="text" placeholder="1234 5678 9000" class="form-control" required></input>
+
+</td>
+</tr>
+<tr>
+  <td><b>CVV</b></td>
+  <td>
+  <input type="password" placeholder="***" class="form-control" required></input>
+
+</td>
+</tr>
+</table>
+<table class="table-responsive" style="margin-left: 42%;">
+  <tbody>
+<tr>
+  <td><button type="button" class="btn btn-danger btn-circle btn-xl"><a href="#/moviebooking" style="color: white;"><i class="glyphicon glyphicon-remove"></i></a></button>
+  </td>
+<td><button type="button" ng-click="ConfirmBook()" ng-disabled="myForm5.$invalid" class="btn btn-primary btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
+</td>
+
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</form>
+</div>

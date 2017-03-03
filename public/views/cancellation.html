@@ -1,0 +1,72 @@
+<style>
+body{margin:40px;}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+</style>
+<div class="container" style="margin-top: 100px;">
+  <div>
+  <button type="button" class="btn btn-primary" style="margin-left: 30%;width: 33%;"><h2><b>Booking Cancellation<b></h2></button></div>
+    <form class="form" name="myForm5" style="margin-top: 5%;" ng-submit="showdetails()">
+<div class="table-responsive" style="margin-top:3%">
+  <table class="table">
+    <!-- <h1>Booking Cancellation </h1> -->
+<tr>
+
+  <td>BOOKING ID</td>
+  <td><input type="text" ng-model="idNo" class="form-control" required></td>
+
+  </tr>
+  <tr>
+    <td>MOVIE NAME</td>
+    <td><input type="text" ng-model="movie" class="form-control" required></td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td>
+      <button type="button" ng-click="showdetails()" ng-disabled="myForm5.$invalid" class="btn btn-primary btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
+    </td>
+
+  </tr>
+
+ </table>
+
+<div ng-show="showd">
+<div class="table-responsive">
+     <table class="table">
+       <tbody>
+
+        <tr>
+          <td><b>TITLE<b></td><td>{{cancellist.conFilmName}}</td></tr>
+            <tr>
+        <td><b>CITY<b></td><td>{{cancellist.conCityName}}</td></tr>
+        <tr>
+        <td><b>THEATER<b></td><td>{{cancellist.conHallName}}</td></tr>
+        <tr>
+        <td><b>DATE<b></td><td>{{cancellist.conDay}}</td></tr>
+        <tr>
+        <td><b>SHOW TIME<b></td> <td>{{cancellist.conShowTime}}</td></tr>
+        <tr>
+        <td><b>SEAT No<b></td>  <td>{{cancellist.conseatNo}}</td></tr>
+        <tr>
+      <td><b>AMOUNT<b></td><td>{{cancellist.conAmount}}</td></tr>
+        <tr>
+<td></td><td><button type="button" class="btn btn-danger btn-circle btn-xl" style="margin-left: -10%;"><a href="#/home" style="color: white;"><i class="glyphicon glyphicon-remove"></i></a>
+  <!-- <button type="button" class="btn btn-danger">BACK</button> -->
+
+<button type="button" ng-click="cancelBook(cancellist)" class="btn btn-primary btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
+  <!-- <button type="button" ng-click="cancelBook(cancellist)" class="btn btn-danger">CANCEL</button> -->
+</td></tr>
+
+   </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>

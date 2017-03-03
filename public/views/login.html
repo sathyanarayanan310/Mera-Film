@@ -1,0 +1,62 @@
+<style>
+form { margin: 0px 10px; }
+
+h2 {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.container { max-width: 360px; }
+
+.divider {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.divider hr {
+  margin: 7px 0px;
+  width: 35%;
+}
+
+.left { float: left; }
+
+.right { float: right; }
+</style>
+
+
+<div class="row content ">
+<div class="container"  >
+<div class="row" >
+  <div style="margin-top: 12%;">
+  <div class="panel panel-primary">
+    <div class="panel-body">
+  <h2>Admin Login</h2>
+  <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+      <form class="form" ng-submit="login()">
+        <div class="form-group">
+
+        </div>
+
+        <div class="form-group">
+          <strong>Email</strong>
+          <input type="email" maxlength="50" class="form-control" ng-model="loginForm.username" required>
+        </div>
+        <div class="form-group">
+          <strong>Password</strong>
+          <input type="password" maxlength="25" class="form-control" ng-model="loginForm.password" required>
+        </div>
+        <div class="form-group" style="padding-top: 12px;">
+          <button type="submit" class="btn btn-success btn-block" ng-disabled="disabled">Sign in</button>
+          </div>
+      </div>
+      <div class="form-group divider">
+        <hr class="left"><small>New to site?</small><hr class="right">
+      </div>
+      <p class="form-group"><a href="#/register" class="btn btn-info btn-block">Create an account</a></p>
+      <p class="form-group">By signing in you are agreeing to our <a href="">Terms of Use</a> and our <a href="">Privacy Policy</a>.</p>
+
+    </div>
+  </div>
+</div></div>
+</div>
