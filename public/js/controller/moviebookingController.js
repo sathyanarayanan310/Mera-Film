@@ -97,8 +97,8 @@ console.log(no);
             // }
             $scope.add =function(){
               console.log($scope.confirmlist);
- date=document.getElementById("datebook").value;
-              $scope.book.Day=date;
+ // date=document.getElementById("datebook").value;
+ //              $scope.book.Day=date;
               $scope.book.FilmName=$scope.movieinfo.Film;
  console.log($scope.book.FilmName);
              console.log($scope.book.CityName);
@@ -149,13 +149,13 @@ while(arr.length < 1){
 
 $scope.book.bookingid= arr;
 // $scope.book.bookingid= arr;
-                date=document.getElementById("datebook").value;
+                // date=document.getElementById("datebook").text;
                 $scope.book.FilmName=$scope.movieinfo.Film;
               $scope.book.seatNo=selected;
               // var amt=parseInt($scope.Amount);
               $scope.book.totalAmount=  100*selected.length;
-              console.log(  $scope.book.totalAmount);
-              $scope.book.Day=date;
+              console.log($scope.book.totalAmount);
+              // $scope.book.Day=date;
               // console.log($scope.book.seatNo);
                   console.log($scope.book);
                   $http.post('/book/book', $scope.book).success(function (response) {

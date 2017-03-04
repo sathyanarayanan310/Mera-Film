@@ -230,7 +230,43 @@ refreshSho();
         });
     };
 
+
     refreshMape();
+    var uniquecityList=[];
+var uniquecityName=[];
+
+$scope.theaterClick=function(){
+  var z;
+  for( z= 0; z< $scope.thtrelist.length; z++){
+
+if($scope.thtrelist[z].location==$scope.map.City){
+  if(uniquecityList.indexOf($scope.thtrelist[z].TheaterName) === -1){
+      uniquecityName.push($scope.thtrelist[z]);
+  uniquecityList.push($scope.thtrelist[z].TheaterName);
+console.log(uniquecityList);
+$scope.TheaterListsuni=uniquecityList;
+}}
+}
+};
+
+var uniqueshowList=[];
+var uniqueShowName=[];
+
+$scope.showClick=function(){
+var x;
+for( x= 0; x< $scope.thtrelist.length; x++){
+
+if($scope.thtrelist[x].TheaterName==$scope.map.Hall){
+if(uniqueShowName.indexOf($scope.thtrelist[x].showtime) === -1){
+  uniqueshowList.push($scope.thtrelist[x]);
+uniqueShowName.push($scope.thtrelist[x].showtime);
+console.log(uniqueShowName);
+$scope.ShowListsuni=uniqueShowName;
+}}
+}
+};
+
+
 
     $('#adds').click(function(){
             var data = ($('#selecttimes').val());
@@ -239,7 +275,7 @@ refreshSho();
         });
 
     $scope.addMap = function () {
-
+$scope.map.From=document.getElementById("dateselect").value;
         console.log($scope.map);
         var t;
 

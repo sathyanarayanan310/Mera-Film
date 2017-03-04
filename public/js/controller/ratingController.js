@@ -76,9 +76,9 @@ $scope.rate.moviYear=$scope.movieinfo.Year;
                   });
             //  $("#myModal").modal();
 
-           }
+          };
 
-refreshRate();
+// refreshRate();
 
 
 $scope.confirmRate= function () {
@@ -93,10 +93,10 @@ $scope.confirmRate= function () {
                             console.log($scope.maplist[i]);
                             $http.put('/map/map/' + $scope.maplist[i]._id, $scope.maplist[i]).success(function (response) {
                                 console.log(response);
-                                refresh();
+                                // refreshRate();
                                 alert("Rating successfull... Thanks for Rating");
-                                // $location.path('/home');
-                              })
+                                $location.path('/home');
+                              });
                             }
                           }
                         }
