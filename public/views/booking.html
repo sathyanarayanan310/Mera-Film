@@ -510,6 +510,7 @@ function prevTab(elem) {
 <table class="table">
   <tbody>
 <button type="button" class="btn btn-primary" style="margin-left: %;margin-top: -6%;width: 100%;"><h2>Showtimes</h2></button>
+<p><b>Note:</b>please select the fields one-by-one</p>
                   <tr><td><b>Show time<b></td>
                   <td><input ng-model="tim.showTime" class="form-control" required/></td><tr>
                   <tr><td></td><td><button ng-click="addShow()" type="button" ng-disabled="myForm.$invalid" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-ok" ></i></button>
@@ -535,6 +536,8 @@ function prevTab(elem) {
                     <tbody>
 
 <button type="button" class="btn btn-primary" style="margin-left: %;margin-top: -6%;width: 100%;"><h2>Cities</h2></button>
+<p><b>Note:</b>please select the fields one-by-one</p>
+
                 <tr><td><b>City Name<b></td>
                 <td><input ng-model="loc.cityName" class="form-control" minlength="3" required/></td></tr>
                 <tr><td></td><td><button ng-click="addCity()" type="button" ng-disabled="myForm1.$invalid" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-ok"></i></button>
@@ -560,6 +563,8 @@ function prevTab(elem) {
                   <table class="table">
                   <tbody>
                     <button type="button" class="btn btn-primary" style="margin-left: %;margin-top: -6%;width: 100%;"><h2>Theaters</h2></button>
+                    <p><b>Note:</b>please select the fields one-by-one</p>
+
                 <tr><td><b>Theater Name<b></td><td><input ng-model="thtre.TheaterName" class="form-control" required/></td></tr>
                 <tr><td><b>City<b></td><td><select class="form-control" ng-model="thtre.location" required>
                 <option ng-repeat="loc in loclist" required>{{loc.cityName}}</option>
@@ -607,6 +612,8 @@ function prevTab(elem) {
                       <table class="table">
                       <tbody>
 <button type="button" class="btn btn-primary" style="margin-left: %;margin-top: -6%;width: 100%;"><h2>Movies</h2></button>
+<p><b>Note:</b>please select the fields one-by-one</p>
+
                 <tr><td><b>Movie Name<b></td><td><input ng-model="movi.moviTitle" class="form-control" required/></td></tr>
                 <tr><td><b>Year<b></td><td><input ng-model="movi.moviYear" class="form-control" required/></td></tr>
                 <tr><td></td>
@@ -656,26 +663,28 @@ function prevTab(elem) {
                     <table class="table">
                     <tbody>
                       <button type="button" class="btn btn-primary" style="margin-left: %;margin-top: -6%;width: 100%;"><h2>Assign Movies with Theater</h2></button>
+                      <p><b>Note:</b>please select the fields one-by-one</p>
+
                 <tr><td><b>Movie</b></td><td><select class="form-control" ng-change="moviclick()" name="movie" ng-model="map.Film" required>
                 <option ng-repeat="m in moviList">{{m.moviTitle}}</option>
               </select></td></tr>
                 <tr><td><b>Language</b></td><td><input type="text" class="form-control" name="lang" ng-model="map.Language" required>
                 </td></tr>
 
-                <tr><td><b>City<b></td><td><select class="form-control" ng-model="map.City" required>
+                <tr><td><b>City<b></td><td><select class="form-control" ng-change="theaterClick()" ng-model="map.City" required>
                 <option ng-repeat="loc in loclist">{{loc.cityName}}</option>
                 </select></td></tr>
-                <tr><td><b>Theater<b></td><td><select id="thname"  class="form-control" ng-model="map.Hall" required>
-                <option ng-repeat="th in thtrelist |filter:map.City" required>{{th.TheaterName}}</option>
+                <tr><td><b>Theater<b></td><td><select id="thname" ng-change="showClick()" class="form-control"  ng-model="map.Hall" required>
+                <option ng-repeat="tm in TheaterListsuni|filter:map.Hall" value={{tm}} required>{{tm}}</option>
                 </select></td></tr>
                 <tr><td><b>Show time<b></td><td><select class="form-control" id="selecttime" ng-model="map.showtime" required>
-                  <optgroup label="Select" ng-repeat="th in thtrelist| filter:map.Hall">
-                    <option ng-repeat="t in th.showtime" value={{t}}>{{t}}</option>
+                  <optgroup ng-repeat="th in ShowListsuni">
+                    <option ng-repeat="t in th" value={{t}}>{{t}}</option>
                   </optgroup>
                 </select>
                 <tr>
 
-                  <td><b>date<b></td><td><input type="date" class="form-control" ng-model="map.From" required></td></tr>
+                  <td><b>date<b></td><td><input type="date" id="dateselect" class="form-control" required></td></tr>
 
 <tr><td></td><td><button  type="submit" ng-disabled="myForm5.$invalid" class="btn btn-primary btn-circle btn-lg"><i class="glyphicon glyphicon-ok"></i></button>
 <button type="button" ng-click="updateMap()" class="btn btn-info btn-circle btn-lg"><i class="glyphicon glyphicon-upload"></i></button></td></tr>

@@ -9,9 +9,38 @@ body{margin:40px;}
   border-radius: 35px;
 }
 </style>
-<div class="container" style="margin-top: 100px;">
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+<div class="container" style="margin-top: 60px;">
   <div>
-  <button type="button" class="btn btn-primary" style="margin-left: 30%;width: 33%;"><h2><b>Booking Cancellation<b></h2></button></div>
+  <button type="button" class="btn btn-primary" style="margin-left: 34%;width: 33%;"><h2><b>Booking Cancellation<b></h2></button></div>
     <form class="form" name="myForm5" style="margin-top: 5%;" ng-submit="showdetails()">
 <div class="table-responsive" style="margin-top:3%">
   <table class="table">
@@ -30,7 +59,7 @@ body{margin:40px;}
     <td>
     </td>
     <td>
-      <button type="button" ng-click="showdetails()" ng-disabled="myForm5.$invalid" class="btn btn-primary btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
+      <button type="button" ng-click="showdetails()" ng-disabled="myForm5.$invalid" class="btn btn-primary btn-circle btn-xl" style="margin-left: 25%;"><i class="glyphicon glyphicon-ok"></i></button>
     </td>
 
   </tr>
@@ -60,7 +89,7 @@ body{margin:40px;}
 <td></td><td><button type="button" class="btn btn-danger btn-circle btn-xl" style="margin-left: -10%;"><a href="#/home" style="color: white;"><i class="glyphicon glyphicon-remove"></i></a>
   <!-- <button type="button" class="btn btn-danger">BACK</button> -->
 
-<button type="button" ng-click="cancelBook(cancellist)" class="btn btn-primary btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
+<button type="button" ng-click="cancelBook(cancellist)" id="myBtn" class="btn btn-primary btn-circle btn-xl"><i class="glyphicon glyphicon-ok"></i></button>
   <!-- <button type="button" ng-click="cancelBook(cancellist)" class="btn btn-danger">CANCEL</button> -->
 </td></tr>
 
@@ -69,4 +98,14 @@ body{margin:40px;}
   </div>
 </div>
 </div>
+
+</div>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
 </div>

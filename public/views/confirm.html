@@ -10,9 +10,9 @@ body{margin:40px;}
 }
 </style>
 
-<div class="container" style="margin-top: 8%;">
+<div class="container" style="margin-top: 5%;">
   <div>
-  <button type="button" class="btn btn-primary" style="margin-left: 30%;width: 33%;"><h2><b>Confirm Booking<b></h2></button></div>
+  <button type="button" class="btn btn-primary" style="margin-left: 34%;width: 33%;"><h2><b>Confirm Booking<b></h2></button></div>
 
 <form class="form" name="myForm5" style="margin-top: 5%;" ng-submit="ConfirmBook()">
 <div class="table-responsive" class="table-responsive" style="margin-top:3%">
@@ -90,14 +90,14 @@ body{margin:40px;}
 <tr>
   <td><b>Account Number</b></td>
   <td>
-  <input type="text" placeholder="1234 5678 9000" class="form-control" required></input>
+  <input type="text" placeholder="1234 5678 9000" class="form-control"  maxlength="12" required></input>
 
 </td>
 </tr>
 <tr>
   <td><b>CVV</b></td>
   <td>
-  <input type="password" placeholder="***" class="form-control" required></input>
+  <input type="password" placeholder="***" class="form-control" maxlength="3" required></input>
 
 </td>
 </tr>
@@ -113,7 +113,7 @@ body{margin:40px;}
 </tr>
 </tbody>
 </table>
-
+<h2 style="text-align:center;"><b>Thank Your for Booking!!!</b></h2>
 
 </div>
 </form>
